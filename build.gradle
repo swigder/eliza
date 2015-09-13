@@ -8,6 +8,10 @@ sourceCompatibility = 1.7
 
 mainClassName = "com.swigder.nlp.eliza.ElizaLauncher"
 
+run {
+    standardInput = System.in
+}
+
 repositories {
     mavenCentral()
 }
