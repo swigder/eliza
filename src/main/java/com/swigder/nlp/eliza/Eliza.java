@@ -1,5 +1,7 @@
 package com.swigder.nlp.eliza;
 
+import com.swigder.nlp.eliza.prompter.Prompter;
+
 import java.util.Scanner;
 
 /**
@@ -7,16 +9,18 @@ import java.util.Scanner;
  */
 public class Eliza {
 
+    private final Prompter initialPrompter;
     private final InputHandler inputHandler;
 
-    public Eliza(InputHandler inputHandler) {
+    public Eliza(Prompter initialPrompter, InputHandler inputHandler) {
+        this.initialPrompter = initialPrompter;
         this.inputHandler = inputHandler;
     }
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Hello.");
+        System.out.println(initialPrompter.prompt());
 
         while (true) {
             String input = scanner.nextLine();

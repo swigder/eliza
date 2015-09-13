@@ -2,6 +2,7 @@ package com.swigder.nlp.eliza.configuration;
 
 import com.swigder.nlp.eliza.Eliza;
 import com.swigder.nlp.eliza.InputHandler;
+import com.swigder.nlp.eliza.prompter.Prompter;
 import com.swigder.nlp.eliza.response.ResponseGenerator;
 import com.swigder.nlp.eliza.transformer.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,10 @@ import java.util.List;
 /**
  * Spring configuration for Eliza which uses all available response generators.
  */
-@ComponentScan(basePackages = {"com.swigder.nlp.eliza.response.impl", "com.swigder.nlp.eliza.transformer.input"})
+@ComponentScan(basePackages = {"com.swigder.nlp.eliza.response.impl", "com.swigder.nlp.eliza.transformer.input", "com.swigder.nlp.eliza.prompter.impl"})
 public class ElizaConfiguration {
 
+    @Autowired private Prompter initialPrompter;
     @Autowired private List<Transformer> inputTransformers;
     @Autowired private List<ResponseGenerator> responseGenerators;
 
@@ -26,6 +28,6 @@ public class ElizaConfiguration {
 
     @Bean
     public Eliza eliza(InputHandler inputHandler) {
-        return new Eliza(inputHandler);
+        return new Eliza(initialPrompter, inputHandler);
     }
 }
