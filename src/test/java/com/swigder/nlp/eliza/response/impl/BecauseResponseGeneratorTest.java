@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class BecauseResponseGeneratorImpl {
+public class BecauseResponseGeneratorTest {
 
     BecauseResponseGenerator generator = new BecauseResponseGenerator();
 
@@ -30,7 +30,7 @@ public class BecauseResponseGeneratorImpl {
     @Test
     public void becauseGeneric() {
         String actual = generator.generateResponse("Because I have nothing more to say to you");
-        assertThat(actual, anyOf(equalTo("Do you think that is a good reason?"), equalTo("Please elaborate on that.")));
+        assertThat(actual, anyOf(equalTo("Do you think that is a good reason?"), equalTo("Please elaborate on that."), equalTo("Go on.")));
     }
 
     @Test
