@@ -1,7 +1,7 @@
 package com.swigder.nlp.eliza.transformer.input;
 
 
-import com.swigder.nlp.eliza.transformer.Transformer;
+import com.swigder.nlp.eliza.transformer.InputTransformer;
 import org.springframework.stereotype.Component;
 
 import java.util.regex.Matcher;
@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  * Transforms the input to standard capitalization for easier pattern matching.
  */
 @Component
-public class StandardCapitalizationTransformer implements Transformer {
+public class StandardCapitalizationTransformer implements InputTransformer {
 
     private final Pattern firstPersonI = Pattern.compile("(^|\\W)i($|\\W)");
 

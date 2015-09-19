@@ -1,6 +1,8 @@
 package com.swigder.nlp.eliza;
 
 import com.swigder.nlp.eliza.response.ResponseGenerator;
+import com.swigder.nlp.eliza.transformer.InputTransformer;
+import com.swigder.nlp.eliza.transformer.OutputTransformer;
 import com.swigder.nlp.eliza.transformer.Transformer;
 
 import java.util.List;
@@ -10,12 +12,14 @@ import java.util.List;
  */
 public class InputHandler {
 
-    private final List<Transformer> inputTransformers;
+    private final List<InputTransformer> inputTransformers;
     private final List<ResponseGenerator> responseGenerators;
+    private final List<OutputTransformer> responseTransformers;
 
-    public InputHandler(List<Transformer> inputTransformers, List<ResponseGenerator> responseGenerators) {
+    public InputHandler(List<InputTransformer> inputTransformers, List<ResponseGenerator> responseGenerators, List<OutputTransformer> responseTransformers) {
         this.inputTransformers = inputTransformers;
         this.responseGenerators = responseGenerators;
+        this.responseTransformers = responseTransformers;
     }
 
     /**
@@ -30,9 +34,12 @@ public class InputHandler {
         }
 
         for (ResponseGenerator responseGenerator : responseGenerators) {
-            String transformed = responseGenerator.generateResponse(input);
-            if (transformed != null) {
-                return transformed;
+            String response = responseGenerator.generateResponse(input);
+            if (response != null) {
+                for (Transformer transformer : responseTransformers) {
+                    response = transformer.transform(response);
+                }
+                return response;
             }
         }
 

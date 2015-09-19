@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 public class TimeResponseGenerator extends RandomResponseGenerator {
     private static final Map<Pattern, List<String>> patterns = new ScalarListMapBuilder<Pattern, String>()
             .put(Pattern.compile("Since (last )?(\\w)"), "What happened $1$2")
+            .put(Pattern.compile("(Yesterday)"), "What happened $1$2")
             .build();
 
     public TimeResponseGenerator() {

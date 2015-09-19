@@ -1,6 +1,5 @@
 package com.swigder.nlp.eliza;
 
-import com.swigder.nlp.eliza.configuration.ElizaConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -8,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class ElizaLauncher {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(ElizaConfiguration.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext("com.swigder.nlp.eliza.configuration", "**.personality.**.configuration");
         ctx.getBean(Eliza.class).run();
     }
 }
