@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
- * Transforms a question into an answer
+ * Responds to questions
  */
 @Component
 @Order (value = 1)

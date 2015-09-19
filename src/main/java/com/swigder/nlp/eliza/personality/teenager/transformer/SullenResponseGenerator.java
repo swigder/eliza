@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+/**
+ * Randomly replaces the output with a sullen response.
+ */
 @Component
 @Order(value = Integer.MAX_VALUE)
 public class SullenResponseGenerator implements OutputTransformer {

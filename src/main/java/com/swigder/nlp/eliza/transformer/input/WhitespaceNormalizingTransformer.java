@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by xx on 9/13/15.
+ * Normalizes whitespace in the input, converting any number of consecutive whitespace characters into a single space.
  */
 @Component
 public class WhitespaceNormalizingTransformer implements InputTransformer {

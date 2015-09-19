@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * This transformer advises suicidal patients to seek help from someone better suited to the task.
+ * Advises suicidal patients to seek help from someone better suited to the task.
  * This is a very important transformer and is thus put first on the list.
  */
 @Component

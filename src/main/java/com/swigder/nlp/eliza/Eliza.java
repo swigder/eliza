@@ -5,7 +5,8 @@ import com.swigder.nlp.eliza.prompter.Prompter;
 import java.util.Scanner;
 
 /**
- * Eliza conducts a conversation with a user using a configured ResponseGenerator.
+ * Eliza conducts a conversation with a user using configured prompters
+ * and generators.
  */
 public class Eliza {
 

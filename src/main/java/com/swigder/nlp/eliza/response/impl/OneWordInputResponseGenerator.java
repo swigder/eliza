@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * Created by xx on 9/13/15.
+ * Responds to inputs of one word
  */
 @Component
 @Order(value = 1)

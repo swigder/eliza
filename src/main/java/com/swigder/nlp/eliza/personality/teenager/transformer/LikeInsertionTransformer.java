@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 /**
- * Randomly inserts like into some responses.
+ * Randomly inserts the word 'like' into some responses.
  */
 @Component
 @Order(value = 1)
@@ -15,7 +15,6 @@ public class LikeInsertionTransformer implements OutputTransformer {
 
     private final Random random = new Random();
     private static final int CHANCE_TO_START_WITH_LIKE = 25;
-    private static final int CHANCE_TO_INSERT_LIKE = 25;
 
     @Override
     public String transform(String input) {

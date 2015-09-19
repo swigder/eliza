@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
  * Transforms words into their chatspeak equivalent
  * Ex: 'you' into 'u' (includes derived words like 'your', 'yourself').
  *     'are' into 'r'
+ *     'why' into 'y'
  */
 @Component
 @Order(value = 1)

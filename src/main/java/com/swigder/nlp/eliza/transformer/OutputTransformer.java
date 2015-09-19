@@ -1,7 +1,7 @@
 package com.swigder.nlp.eliza.transformer;
 
 /**
- * Created by xx on 9/19/15.
+ * Marker interface to be used by transformers meant to transform or normalize ELIZA's output
  */
 public interface OutputTransformer extends Transformer {
 }

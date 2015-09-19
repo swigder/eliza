@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Response generator to help start a discussion when the patient is unsure of what to say.
+ * Helps start a discussion when the patient is unsure of what to say.
  */
 @Component
 @Order (value = 1)

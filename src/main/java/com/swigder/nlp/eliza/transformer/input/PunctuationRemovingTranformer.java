@@ -7,7 +7,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by xx on 9/13/15.
+ * Removes all punctuation.  This makes matching easier as individual regex's do
+ * not have to account for optional punctuation, but means that generators can't use
+ * ? or ! to identify a question or excitement.
  */
 @Component
 public class PunctuationRemovingTranformer implements InputTransformer {

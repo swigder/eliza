@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * This response generator advises the patient to talk about him or herself.
+ * Advises the patient to talk about him or herself.
  * Since this has a very general regex matcher, it should be put lower on the stack.
  */
 @Component

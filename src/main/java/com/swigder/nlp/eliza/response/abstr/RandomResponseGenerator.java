@@ -12,17 +12,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Returns one of a list of responses for given inputs.
+ * Returns one of a list of responses for given inputs, at random.
+ * If an input matches multiple patterns, the earliest pattern match will be used.
+ * Configured responses may use back-references.
  */
 public class RandomResponseGenerator implements ResponseGenerator {
     private final Map<List<Pattern>, List<String>> patterns;
     private final Random random = new Random();
 
+    /**
+     * @param pattern regex for which to provide a response
+     * @param responses list of responses appropriate for the input
+     */
     public RandomResponseGenerator(Pattern pattern, List<String> responses) {
         List<Pattern> patterns = Lists.newArrayList(pattern);
         this.patterns = ImmutableMap.of(patterns, responses);
     }
 
+    /**
+     * @param patterns map of patterns to a list of appropriate responses
+     */
     public RandomResponseGenerator(Map<Pattern, List<String>> patterns) {
         this.patterns = Maps.newLinkedHashMap();
         for (Pattern pattern : patterns.keySet()) {
@@ -30,6 +39,10 @@ public class RandomResponseGenerator implements ResponseGenerator {
         }
     }
 
+    /**
+     * @param patterns list of patterns for which to provide a response
+     * @param responses list of responses that match all given patterns
+     */
     public RandomResponseGenerator(List<Pattern> patterns, List<String> responses) {
         this.patterns = ImmutableMap.of(patterns, responses);
     }

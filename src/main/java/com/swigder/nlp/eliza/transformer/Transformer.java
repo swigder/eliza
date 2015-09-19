@@ -1,8 +1,13 @@
 package com.swigder.nlp.eliza.transformer;
 
 /**
- * Created by xx on 9/12/15.
+ * Transforms one string into another string.
  */
 public interface Transformer {
+    /**
+     * Transform a string into another string
+     * @param input string to be transformed
+     * @return transformed string
+     */
     public String transform(String input);
 }

@@ -14,7 +14,10 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 /**
- * Spring configuration for Eliza which uses all available response generators.
+ * Spring configuration for ELIZA.
+ * The Prompter, InputTransformers, ResponseGenerators, and OutputTransformers
+ * will be autowired from those available on the Spring Context.  See ElizaLauncher
+ * for more detail.
  */
 @Configuration
 public class ElizaConfiguration {
