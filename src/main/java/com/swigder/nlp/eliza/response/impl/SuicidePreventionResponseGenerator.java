@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class SuicidePreventionResponseGenerator extends SingleResponseGenerator {
 
     private static final List<Pattern> patterns = Lists.newArrayList(
-            Pattern.compile("I.*suicide"),
+            Pattern.compile(".*[sS]uicide.*"),
             Pattern.compile("I want to die"),
             Pattern.compile(".*kill myself")
     );

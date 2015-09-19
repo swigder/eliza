@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 @Order(value = 1)
 public class UncertaintyResponseGenerator extends RandomResponseGenerator {
     private static final Map<Pattern, List<String>> patterns = new ScalarListMapBuilder<Pattern, String>()
+            .put(Pattern.compile("Maybe.*"), "Why aren't you sure?")
             .put(Pattern.compile("^.+(may|might).+"), "Why aren't you sure?")
             .build();
 
