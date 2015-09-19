@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.swigder.nlp.eliza.Eliza;
 import com.swigder.nlp.eliza.InputHandler;
 import com.swigder.nlp.eliza.prompter.Prompter;
-import com.swigder.nlp.eliza.response.ResponseGenerator;
+import com.swigder.nlp.eliza.responder.ResponseGenerator;
 import com.swigder.nlp.eliza.transformer.InputTransformer;
 import com.swigder.nlp.eliza.transformer.OutputTransformer;
 import org.springframework.beans.factory.annotation.Autowired;

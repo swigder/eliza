@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 /**
- * Randomly replaces the output with a sullen response.
+ * Randomly replaces the output with a sullen responder.
  */
 @Component
 @Order(value = Integer.MAX_VALUE)

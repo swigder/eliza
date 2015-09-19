@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
  * To use, pass -Dspring.profiles.active=teenager as a command line argument.
  */
 @Configuration
-@ComponentScan(basePackages = {"com.swigder.nlp.eliza.personality.teenager.transformer"})
+@ComponentScan(basePackages = {"com.swigder.nlp.eliza.personality.teenager.transformer", "com.swigder.nlp.eliza.personality.teenager.responder"})
 @Profile("teenager")
 public class TeenagerConfiguration {
 

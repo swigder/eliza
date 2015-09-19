@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
         "com.swigder.nlp.eliza.prompter",
         "com.swigder.nlp.eliza.transformer.input",
         "com.swigder.nlp.eliza.transformer.output",
-        "com.swigder.nlp.eliza.response"})
+        "com.swigder.nlp.eliza.responder"})
 public class DefaultConfiguration {
 
 }
