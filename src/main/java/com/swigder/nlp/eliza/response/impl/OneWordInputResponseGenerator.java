@@ -19,6 +19,7 @@ public class OneWordInputResponseGenerator implements ResponseGenerator {
             .put("Yes", "Why?")
             .put("No", "Why not?", "Do you wish it were different?")
             .put("Maybe", "Why are you unsure?", "What would make you more sure?", "Do you wish you knew?")
+            .put("(Ok|Okay|OK)", "Can you say something more than $1?", "Why are you so ambivalent today?")
             .build();
 
     Random random = new Random();
