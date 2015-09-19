@@ -10,6 +10,7 @@ mainClassName = "com.swigder.nlp.eliza.ElizaLauncher"
 
 run {
     standardInput = System.in
+    systemProperties System.getProperties()
 }
 
 repositories {
