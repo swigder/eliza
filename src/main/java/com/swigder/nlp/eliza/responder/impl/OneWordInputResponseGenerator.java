@@ -34,7 +34,8 @@ public class OneWordInputResponseGenerator implements ResponseGenerator {
             return null;
         }
 
-        if (responses.keySet().contains(input.toLowerCase())) {
+        input = input.toLowerCase();
+        if (responses.keySet().contains(input)) {
             List<String> possibleAnswers = responses.get(input);
             return possibleAnswers.get(random.nextInt(possibleAnswers.size()));
         }

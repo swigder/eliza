@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 @Order (value = 5)
 public class PatientFocusResponseGenerator extends SingleResponseGenerator {
     private static final List<Pattern> patterns = Lists.newArrayList(
-            Pattern.compile(".*you.*")
+            Pattern.compile(".*you.*", Pattern.CASE_INSENSITIVE)
     );
 
     private static final String advice = "Let's talk about you today, okay?";

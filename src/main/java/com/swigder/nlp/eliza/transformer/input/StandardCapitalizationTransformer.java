@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 /**
  * Transforms the input to standard capitalization for easier pattern matching.
  * This means that the first letter of each sentence and the word 'I' will be capitalized.
+ * #TODO should've actually just used case-insensitive compare (wrapping Pattern to only have to do it once)
  */
 @Component
 public class StandardCapitalizationTransformer implements InputTransformer {
