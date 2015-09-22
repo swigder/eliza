@@ -43,14 +43,14 @@ public class ElizaIntegrationTest {
         };
         new Thread(runnable).start();
 
-        Callable<String> callable = new Callable<String>() {
+        Callable<String> output = new Callable<String>() {
             @Override
             public String call() throws Exception {
                 return outputStream.toString().trim();
             }
         };
 
-        await().atMost(1, TimeUnit.SECONDS).until(callable,
+        await().atMost(1, TimeUnit.SECONDS).until(output,
                 anyOf(
                         equalTo("How are you today?"),
                         equalTo("How are you feeling today?"),
@@ -63,7 +63,7 @@ public class ElizaIntegrationTest {
         outputStream.reset();
         pipedOutputStream.write("I'm sad\n".getBytes(Charsets.UTF_8));
 
-        await().atMost(3, TimeUnit.SECONDS).until(callable,
+        await().atMost(3, TimeUnit.SECONDS).until(output,
                 anyOf(
                         equalTo("I am sorry that you are sad."),
                         equalTo("Since when have you been feeling sad?"),
@@ -74,7 +74,7 @@ public class ElizaIntegrationTest {
         outputStream.reset();
         pipedOutputStream.write("I've been feeling sad since everything went bad.\n".getBytes(Charsets.UTF_8));
 
-        await().atMost(3, TimeUnit.SECONDS).until(callable,
+        await().atMost(3, TimeUnit.SECONDS).until(output,
                 anyOf(
                         equalTo("I'm sorry about that.")
                 )
