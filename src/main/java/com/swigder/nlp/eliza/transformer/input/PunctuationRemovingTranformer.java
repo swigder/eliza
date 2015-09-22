@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 @Component
 public class PunctuationRemovingTranformer implements InputTransformer {
 
-    private final Pattern punctuation = Pattern.compile("[.?!,]+");
+    private final Pattern punctuation = Pattern.compile("([.?!]+$|,)");
 
     @Override
     public String transform(String input) {
