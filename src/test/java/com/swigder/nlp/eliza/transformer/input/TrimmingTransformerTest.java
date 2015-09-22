@@ -10,7 +10,7 @@ public class TrimmingTransformerTest {
 
     @Test
     public void trims() {
-        String actual = "  I like to    move it    move it    \t\n   ";
+        String actual = transformer.transform("  I like to move it move it  \t   \n   ");
         assertThat(actual, is("I like to move it move it"));
     }
 }
