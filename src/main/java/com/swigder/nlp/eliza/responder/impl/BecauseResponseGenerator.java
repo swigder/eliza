@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  * Responds to inputs starting with "Because"
  */
 @Component
-@Order(value = 2)
+@Order(value = 5)
 public class BecauseResponseGenerator extends RandomResponseGenerator {
     private static final Map<Pattern, List<String>> patterns = new ScalarListMapBuilder<Pattern, String>()
             .put(Pattern.compile("Because (?:I am|I'm) (.*)"), "Why are you $1?", "Since when have you been $1?")

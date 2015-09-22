@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.List;
 
 /**
@@ -21,6 +23,9 @@ import java.util.List;
  */
 @Configuration
 public class ElizaConfiguration {
+
+    @Autowired private InputStream inputStream;
+    @Autowired private PrintStream printStream;
 
     @Autowired protected Prompter initialPrompter;
     @Autowired(required=false) protected List<InputTransformer> inputTransformers = Lists.newArrayList();
@@ -34,6 +39,6 @@ public class ElizaConfiguration {
 
     @Bean
     public Eliza eliza() {
-        return new Eliza(initialPrompter, inputHandler());
+        return new Eliza(inputStream, printStream, initialPrompter, inputHandler());
     }
 }

@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class QuestionResponseGenerator extends RandomResponseGenerator {
 
     private static final Map<Pattern, List<String>> patterns = new ScalarListMapBuilder<Pattern, String>()
-            .put(Pattern.compile("^(Why|Do|How).*"), "Why do you ask?", "What do you think?", "What do you think the answer is?")
+            .put(Pattern.compile("^(Why|Do|How) .*"), "Why do you ask?", "What do you think?", "What do you think the answer is?")
             .build();
 
     public QuestionResponseGenerator() {

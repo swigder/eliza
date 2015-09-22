@@ -2,6 +2,8 @@ package com.swigder.nlp.eliza;
 
 import com.swigder.nlp.eliza.prompter.Prompter;
 
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
@@ -10,22 +12,26 @@ import java.util.Scanner;
  */
 public class Eliza {
 
+    private final InputStream inputStream;
+    private final PrintStream outputStream;
     private final Prompter initialPrompter;
     private final InputHandler inputHandler;
 
-    public Eliza(Prompter initialPrompter, InputHandler inputHandler) {
+    public Eliza(InputStream inputStream, PrintStream outputStream, Prompter initialPrompter, InputHandler inputHandler) {
+        this.inputStream = inputStream;
+        this.outputStream = outputStream;
         this.initialPrompter = initialPrompter;
         this.inputHandler = inputHandler;
     }
 
     public void run() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(inputStream);
 
-        System.out.println(initialPrompter.prompt());
+        outputStream.println(initialPrompter.prompt()); // todo this separation of initial prompter is a bit weird and also means transformers aren't run on it
 
-        while (true) {
+        while (scanner.hasNext()) {
             String input = scanner.nextLine();
-            System.out.println(inputHandler.handleInput(input));
+            outputStream.println(inputHandler.handleInput(input));
         }
     }
 
