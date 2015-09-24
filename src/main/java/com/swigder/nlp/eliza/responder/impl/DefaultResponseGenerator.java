@@ -20,6 +20,9 @@ public class DefaultResponseGenerator implements ResponseGenerator {
             "I don't know what to say to that.",
             "Tell me more about that.",
             "Please elaborate.",
+            "I'm listening.",
+            "Tell me more.",
+            "Continue.",
             "Go on."
     );
     private final Random random = new Random();

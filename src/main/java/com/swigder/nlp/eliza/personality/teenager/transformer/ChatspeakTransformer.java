@@ -18,7 +18,9 @@ public class ChatspeakTransformer implements OutputTransformer {
     public String transform(String input) {
         input = input.replaceAll("you", "u");
         input = input.replaceAll("\\sare\\s", " r ");
-        input = input.replaceAll("[Ww]hy\\s", "y ");
+        input = input.replaceAll("why\\s", "y ");
+        input = input.replaceAll("i am", "im");
+        input = input.replaceAll("please", "pls");
         return input;
     }
 }

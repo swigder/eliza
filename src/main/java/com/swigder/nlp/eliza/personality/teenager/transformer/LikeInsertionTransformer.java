@@ -19,7 +19,7 @@ public class LikeInsertionTransformer implements OutputTransformer {
     @Override
     public String transform(String input) {
         if (random.nextInt(CHANCE_TO_START_WITH_LIKE) == 0) {
-            return "Like " + input.substring(0, 1).toLowerCase() + input.substring(1);
+            return "like " + input.substring(0, 1).toLowerCase() + input.substring(1);
         }
         return input;
     }

@@ -20,6 +20,7 @@ public class GenericResponseGenerator extends RandomResponseGenerator {
             .put(Pattern.compile("(?:This|That|It)(?: is|'s) (\\w+)"), "Why is it $1?", "Why do you think it is $1?", "Do you care that it is $1?", "Tell me why it is $1.")
             .put(Pattern.compile("My ([\\w+\\s]+) (are|have|is) (\\w+)"), "Tell me more about your $1.", "Why $2 your $1 $3?", "Why do you think your $1 $2 $3?")
             .put(Pattern.compile("My ([\\w+\\s]+) (are|have|is) .*"), "Tell me more about your $1.")
+            .put(Pattern.compile("(I am|I'm) not.*"), "Why not?")
             .build();
 
     public GenericResponseGenerator() {
